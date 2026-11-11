@@ -1,0 +1,33 @@
+# The authoritative DECLARED map. Keep it small; the checker verifies only
+# specified properties, not the complete behavioral correctness of the system.
+[project]
+name = "Architecture Continuity Kit (example)"
+root_package = "demo"
+mission = "A tiny AI-project-shaped example with explicit architectural boundaries."
+
+[[components]]
+id = "core"
+path = "demo/core"
+package = "demo.core"
+purpose = "Domain types and policy; independent of other components."
+owner = "Core team"
+dependencies = []
+evidence = ["tests/test_demo.py", "docs/INVARIANTS.md"]
+
+[[components]]
+id = "research"
+path = "demo/research"
+package = "demo.research"
+purpose = "Research logic built on domain primitives."
+owner = "Research team"
+dependencies = ["core"]
+evidence = ["tests/test_demo.py"]
+
+[[components]]
+id = "api"
+path = "demo/api"
+package = "demo.api"
+purpose = "Presentation-facing adapter; no logic duplicated from research."
+owner = "Application team"
+dependencies = ["research", "core"]
+evidence = ["tests/test_demo.py"]
