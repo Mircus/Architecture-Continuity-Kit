@@ -1,3 +1,17 @@
+
+<div align="center">
+  <img src="ACK-Logo.png"
+       alt="Architecture Continuity Kit"
+       width="650">
+
+  <h1>Architecture Continuity Kit</h1>
+
+  <p>
+    <strong>Keeping large AI projects understandable as they evolve.</strong>
+  </p>
+</div>
+
+
 # Architecture Continuity Kit
 
 **A small starter for keeping a growing AI/software project understandable.**
